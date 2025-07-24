@@ -816,5 +816,211 @@ section {
     border-right: none;
 }
 
+@media (max-width: 768px) {
+    .social-links {
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .social-links-contact {
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
 
+@media (max-width: 480px) {
+    .social-links {
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+    }
+    
+    .social-links-contact {
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+    }
+}
+/* Combined optimal floating cards layout */
+.hero-visual {
+    position: relative;
+    height: 400px;
+    width: 100%;
+}
+
+.floating-card {
+    position: absolute;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.2rem 1.5rem;
+    backdrop-filter: blur(10px);
+    min-width: 140px;
+    text-align: center;
+}
+
+/* Tablet - Basic triangle layout */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .floating-card {
+        animation: float 6s ease-in-out infinite;
+    }
+    
+    .hero-visual {
+        height: 350px;
+    }
+    
+    .floating-card:nth-child(1) {
+        top: 15%;
+        left: 15%;
+        animation-delay: 0s;
+    }
+    
+    .floating-card:nth-child(2) {
+        top: 15%;
+        right: 15%;
+        animation-delay: 2s;
+    }
+    
+    .floating-card:nth-child(3) {
+        bottom: 15%;
+        left: 50%;
+        transform: translateX(-50%);
+        animation-delay: 4s;
+    }
+}
+
+/* Laptop - Compact and balanced layout */
+@media (min-width: 1024px) and (max-width: 1440px) {
+    .hero-visual {
+        position: relative;
+        height: 300px;
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    .floating-card {
+        position: absolute;
+        min-width: 150px;
+        max-width: 240px;
+        padding: 1rem 1.5rem;
+        text-align: center;
+        animation: float 6s ease-in-out infinite;
+        backdrop-filter: blur(10px);
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+        background: var(--bg-secondary);
+    }
+
+    .floating-card:nth-child(1) {
+        top: 10%;
+        left: 10%;
+        animation-delay: 0s;
+    }
+
+    .floating-card:nth-child(2) {
+        top: 10%;
+        right: 10%;
+        animation-delay: 2s;
+    }
+
+    .floating-card:nth-child(3) {
+        bottom: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        animation-delay: 4s;
+    }
+}
+
+/* Large Desktop - Spacious layout */
+@media (min-width: 1441px) {
+    .hero-visual {
+        height: 350px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 3rem;
+    }
+
+    .floating-card {
+        animation: float 6s ease-in-out infinite;
+    }
+
+    .floating-card:nth-child(1) {
+        top: 12%;
+        left: 12%;
+        animation-delay: 0s;
+    }
+
+    .floating-card:nth-child(2) {
+        top: 12%;
+        right: 12%;
+        animation-delay: 2s;
+    }
+
+    .floating-card:nth-child(3) {
+        bottom: 12%;
+        left: 50%;
+        transform: translateX(-50%);
+        animation-delay: 4s;
+    }
+}
+
+/* Mobile - Stacked with gentle animation */
+@media (max-width: 767px) {
+    .hero-visual {
+        position: static;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem 1rem;
+    }
+    
+    .floating-card {
+        position: static !important;
+        width: 220px;
+        margin: 0;
+        animation: gentleFloat 4s ease-in-out infinite;
+    }
+    
+    .floating-card:nth-child(1) {
+        animation-delay: 0s;
+    }
+    
+    .floating-card:nth-child(2) {
+        animation-delay: 1.3s;
+    }
+    
+    .floating-card:nth-child(3) {
+        animation-delay: 2.6s;
+    }
+}
+
+/* Animations */
+@keyframes gentleFloat {
+    0%, 100% { 
+        transform: translateY(0px);
+    }
+    50% { 
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes float {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg); 
+    }
+    33% { 
+        transform: translateY(-20px) rotate(1deg); 
+    }
+    66% { 
+        transform: translateY(-10px) rotate(-1deg); 
+    }
+}
 
